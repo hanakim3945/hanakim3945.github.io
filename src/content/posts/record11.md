@@ -4,7 +4,7 @@ published: 2025-05-01
 description: Proof of Concept Apple Activation Record Generation via 11-Digit Serial Numbers
 tags: [RE, Hax, Apple, iCloud]
 category: Hacking
-draft: true
+draft: false
 ---
 
 **Proof of Concept: Apple Activation Record Generation via 11-Digit Serial Numbers**

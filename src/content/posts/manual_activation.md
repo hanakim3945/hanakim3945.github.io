@@ -4,7 +4,7 @@ published: 2025-06-18
 description: Manual device activation with records
 tags: [RE, Hax, Apple, iCloud]
 category: Guide
-draft: true
+draft: false
 ---
 
 Read this post on your own risk! The information is based on my own research and my (not-so-good-yet) reverse engineering skills. Thus, this write-up might be incorrect, contains mistakes and turn out partially or completely wrong! Do not trust it blindly and DYOR :\)
