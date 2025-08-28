@@ -19,7 +19,7 @@ Apple's system currently accepts a wide range of SN formats, including non-stand
 
 ## Update [28th August 2025]
 
-Apple patched the 
+Apple patched the ticket generating today for models ranging iPhone 5S - 16ProMax
 
 ---
 
