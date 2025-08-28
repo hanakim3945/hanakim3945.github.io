@@ -1,18 +1,43 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.2.2/schema.json",
-  "root": true,
   "vcs": {
-    "enabled": false
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
   },
   "files": {
-    "ignoreUnknown": true
+    "ignoreUnknown": false,
+    "ignore": ["src/**/*.css","src/public/**/*", "dist/**/*", "node_modules/**/*"]
   },
   "formatter": {
-    "enabled": false
+    "enabled": true,
+    "indentStyle": "tab"
+  },
+  "organizeImports": {
+    "enabled": true
   },
   "linter": {
-    "enabled": false,
-    "rules": {}
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
   },
-  "overrides": []
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
+  "overrides": [
+    {
+      "include": ["*.svelte", "*.astro", "*.vue"],
+      "linter": {
+        "rules": {
+          "style": {
+            "useConst": "off",
+            "useImportType": "off"
+          }
+        }
+      }
+    }
+  ]
 }
