@@ -1,14 +1,14 @@
 # About
 
-*"Professional chaos engineer with a side of kimchi obsession"*  
+*"The shittier the code, the harder you can get fired 🔥🌸"*  
 
-`Professional Shitcoder` • `Apple Device Abuser` • `You like Bibimbap?`  
+`Professional Shitcoder` • `Apple Device Ab(normal)user` • `Are you open-minded 👻?`  
 
-> *"The shittier the code, the harder you get fired 🔥🌸"*  
-
-### **I do**  
+### **I love, I like ...**  
 `C` • `OBJC` • `Swift` • `Assembly` • `RE` • `Python`  
 
-```c
-// When you see my code:
-printf("🔥WHAT IS THIS MESS?🔥\n");
+### Contact
+
+💌 hanakim3945@icloud.com
+
+𝕏 [@hanakim3945](https://x.com/hanakim3945)
