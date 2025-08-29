@@ -163,9 +163,9 @@ chflags uchg /var/mobile/Library/Preferences/com.apple.purplebuddy.plist
 
 ```bash
 mv -f /var/wireless/activation_records /private/var/containers/Data/System/<SOME UUID>/
-chmod -R 777 /private/var/containers/Data/System/<SOME UUID>/activation_records
-chown -R mobile:nobody /private/var/containers/Data/System/<SOME UUID>/activation_records
-chmod 666 /private/var/containers/Data/System/<SOME UUID>/activation_records/activation_record.plist
+chmod -R 777 /private/var/containers/Data/System/<SOME UUID>/Library/activation_records
+chown -R mobile:nobody /private/var/containers/Data/System/<SOME UUID>/Library/activation_records
+chmod 666 /private/var/containers/Data/System/<SOME UUID>/Library/activation_records/activation_record.plist
 ```
 
 ### Set Up IC-Info and CommCenter

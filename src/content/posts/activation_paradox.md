@@ -1,5 +1,5 @@
 ---
-title: The activation paradoxon
+title: The activation paradox
 published: 2025-06-18
 description: Apple's activation mechanism is vulnerable to replay attacks, affected iPhones, iPads, iPods, iWatches
 tags: [RE, Hax, Apple, iCloud]
