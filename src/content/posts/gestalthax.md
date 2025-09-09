@@ -4,7 +4,7 @@ published: 2025-05-01
 description: Hactivation via MobileGestalt POC
 tags: [RE, Hax, Apple, iCloud]
 category: Hacking
-draft: true
+draft: false
 ---
 
 # GestaltHax
