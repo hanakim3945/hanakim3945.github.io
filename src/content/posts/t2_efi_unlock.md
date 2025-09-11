@@ -4,7 +4,7 @@ published: 2025-08-23
 description: Remove EFI lock of T2 Macs via a simple file obliteration
 tags: [RE, Hax, Apple, iCloud]
 category: Hacking
-draft: false
+draft: true
 ---
 
 Read this post on your own risk! The information is based on my own research and my (not-so-good-yet) reverse engineering skills. Thus, this write-up might be incorrect, contains mistakes and turn out partially or completely wrong! Do not trust it blindly and DYOR :\)
