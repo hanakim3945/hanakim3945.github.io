@@ -17,7 +17,8 @@ A malicious crafted downloads.28.sqlitedb database can modify files on the Data 
 
 The POC is working on any iPhone and iPad running the latest iOS Version 26.2b1 or earlier.
 
-In our test case, we are using an iPhone 12 running iOS 26.0.1. We will write a patched file to `/private/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist` which will hactivate the device and set it's device type to iPod9,1 (iPod touch 7) for demo purposes that the exploit worked successfully.
+In our test case, we are using an iPhone 12 running iOS 26.0.1. We will write a patched file to `/private/var/containers/Shared/SystemGroup/`
+`systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist` which will hactivate the device and set it's device type to iPod9,1 (iPod touch 7) for demo purposes that the exploit worked successfully.
 
 
 ### File requirements
@@ -58,11 +59,13 @@ In our downloads.28 database, we find several tables - of special interest is th
 
 It is managed by `itunesstored` and we are therefore limited to the sandbox permissions of this daemon.
 
-For example it **can’t** **write** to `/private/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist`
+For example it **can’t** **write** to `/private/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache`
+`/Library/Caches/com.apple.MobileGestalt.plist`
 
 but it can write to our stage2, 
 
-`/private/var/containers/Shared/SystemGroup/<some_UUID_here>/Documents/BLDatabaseManager/BLDatabaseManager.sqlite`
+`/private/var/containers/Shared/SystemGroup/<some_UUID_here>/`
+`Documents/BLDatabaseManager/BLDatabaseManager.sqlite`
 
 In order to download a file to the said path, we just need to add a new entry to our downloads.28 Database, following SQL command will do the job:
 
@@ -74,7 +77,8 @@ INSERT INTO "main"."asset" ("pid", "download_id", "asset_order", "asset_type", "
 
 This database is managed by `bookassetd`, another daemon which is responsible for downloading and management of the iBooks on our idevice. It’s sandbox permissions are wider, it can write to most files owned by `mobile` in the Data partition.
 
-In our case, we will write a file to `/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/Library/Caches/com.apple.MobileGestalt.plist`
+In our case, we will write a file to `/var/containers/Shared/SystemGroup/systemgroup.com.apple.mobilegestaltcache/`
+`Library/Caches/com.apple.MobileGestalt.plist`
 
 To download the file there, we go into our `BLDatabaseManager.sqlite` Database and add the following row to `ZBDOWNLOADINFO` table:
 
@@ -124,7 +128,9 @@ The resulting file is ready to be placed on server to be downloaded using the BL
 1. Start the device, connect to a stable WiFi network with internet access.
 2. Modify the `downloads.28.sqlitedb` database with the correct path to BLDatabaseManager. We need to find the correct UUID here for the path. This can be obtained by fetching the device logarchive with command `pymobiledevice3 syslog collect logs.logarchive`.
 The resulting file can be opened in the `Console.app` on mac and we can find the path easily by searching for “BLDatabase”. 
-    `info	2025-10-20 22:43:29.111433 +0200	bookassetd	[Database]: Store is at file:///private/var/containers/Shared/SystemGroup/<UUID_HERE>/Documents/BLDatabaseManager/BLDatabaseManager.sqlite` ***When found, replace the path in the database with the correct one.***
+    `info	2025-10-20 22:43:29.111433 +0200	bookassetd	[Database]: Store is at file:///private/var/containers/Shared/SystemGroup/<UUID_HERE>/`
+    `Documents/BLDatabaseManager/BLDatabaseManager.sqlite` 
+    ***When found, replace the path in the database with the correct one.***
 
 3. First delete all files from the folder `/var/mobile/Media/Downloads`
 4. Place the crafted `downloads.28.sqlitedb` to `/var/mobile/Media/Downloads/downloads.28.sqlitedb` , this can be done from any Apple File Conduit (afc) client like 3uTools, [i4.cn](http://i4.cn) or using afcclient commandline tool https://github.com/emonti/afcclient/tree/master
