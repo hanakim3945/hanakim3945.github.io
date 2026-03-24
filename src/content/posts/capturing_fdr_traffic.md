@@ -151,9 +151,6 @@ This POC is for **educational purposes only**.
 - Do **not** use this for illegal activities.
 - Apple may patch this behavior at any time.
 
-The PoC can be found on here
-https://github.com/hanakim3945/bibimbap
-
 
 
 © 2025  ~ Hana Kim
